@@ -1,34 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="505.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uno.RulesController">
+<AnchorPane prefHeight="605.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uno.controllers.RulesController">
    <children>
-      <ImageView fitHeight="505.0" fitWidth="800.0" pickOnBounds="true">
+      <ImageView fitHeight="605.0" fitWidth="975.0" pickOnBounds="true">
          <image>
-            <Image url="@red_background3.png" />
+            <Image url="@imgs/blue_background.jpg" />
          </image>
+         <effect>
+            <InnerShadow height="46.65" radius="22.275" width="44.45">
+               <color>
+                  <Color opacity="0.8358778357505798" />
+               </color>
+            </InnerShadow>
+         </effect>
       </ImageView>
-      <Label alignment="CENTER" layoutX="-1.0" prefHeight="103.0" prefWidth="800.0" text="HOW TO PLAY:" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="-1.0" prefHeight="103.0" prefWidth="975.0" text="HOW TO PLAY:" textAlignment="CENTER" textFill="WHITE" underline="true">
          <font>
             <Font name="MS Gothic" size="56.0" />
          </font>
+         <effect>
+            <DropShadow height="13.67" radius="5.967499999999999" width="12.2" />
+         </effect>
       </Label>
-      <Button fx:id="btnReturnToTitle" layoutX="658.0" layoutY="462.0" mnemonicParsing="false" onAction="#btnReturnToTitle_OnClick" prefHeight="36.0" prefWidth="141.0" style="-fx-background-color: white; -fx-background-radius: 100;" text="Return to title">
+      <Button fx:id="btnReturnToTitle" layoutX="418.0" layoutY="531.0" mnemonicParsing="false" onAction="#btnReturnToTitle_OnClick" prefHeight="36.0" prefWidth="141.0" style="-fx-background-color: white; -fx-background-radius: 100;" text="Return to title">
          <font>
             <Font name="MS Gothic" size="15.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
       </Button>
-      <Label layoutX="-2.0" layoutY="92.0" prefHeight="301.0" prefWidth="800.0" text="&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label layoutX="4.0" layoutY="97.0" prefHeight="103.0" prefWidth="969.0" text="Objective: The first player to play ALL the cards in their hand before other players wins. " textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="MS Gothic" size="22.0" />
          </font>
+         <effect>
+            <DropShadow radius="7.800000000000001" width="12.2" />
+         </effect>
+      </Label>
+      <Label layoutX="2.0" layoutY="163.0" prefHeight="263.0" prefWidth="969.0" text="Setup: Each player will be dealt 7 cards by the automated dealer at the start of the game. Each player will then take turns trying to match one of their cards to the current card face-up on the center deck.Either the color of your card or the number must match in order for the card (or both) to be played.If you do not have a matching card, you must draw one from the deck and the next player takes their turn." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="MS Gothic" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow radius="7.800000000000001" width="12.2" />
+         </effect>
       </Label>
    </children>
 </AnchorPane>
