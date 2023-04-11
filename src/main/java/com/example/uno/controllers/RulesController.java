@@ -1,5 +1,6 @@
-package com.example.uno;
+package com.example.uno.controllers;
 
+import com.example.uno.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
