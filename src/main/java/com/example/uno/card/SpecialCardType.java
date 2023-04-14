@@ -1,8 +1,9 @@
 package com.example.uno.card;
 
 public enum SpecialCardType {
-    SKIP,
-    REVERSE,
-    DRAW_TWO,
-    WILD,
+    Skip,
+    Reverse,
+    Draw_Two,
+    Wild,
+    Wild_Draw_Four
 }
