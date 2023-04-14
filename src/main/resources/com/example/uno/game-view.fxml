@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="605.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uno.controllers.GameController">
+<AnchorPane prefHeight="746.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uno.controllers.GameController">
    <children>
-      <ImageView fitHeight="605.0" fitWidth="975.0" pickOnBounds="true">
+      <ImageView fitHeight="746.0" fitWidth="1025.0" pickOnBounds="true">
          <image>
             <Image url="@imgs/blue_background.jpg" />
          </image>
@@ -15,5 +25,214 @@
             <InnerShadow height="46.65" radius="22.275" width="44.45" />
          </effect>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="217.0" layoutX="384.0" layoutY="266.0" opacity="0.84" stroke="#afd5fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="269.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="389.0" layoutY="272.0" pickOnBounds="true">
+         <image>
+            <Image url="@imgs/uno_card_back.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Line endX="230.0" layoutX="496.0" layoutY="512.0" startX="-185.0" stroke="WHITE" strokeWidth="3.0">
+         <effect>
+            <MotionBlur radius="63.0" />
+         </effect>
+      </Line>
+      <Text fill="WHITE" layoutX="310.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You" wrappingWidth="49.5">
+         <font>
+            <Font name="Georgia" size="21.0" />
+         </font>
+      </Text>
+      <Line endX="230.0" layoutX="492.0" layoutY="233.0" startX="-185.0" stroke="WHITE" strokeWidth="3.0">
+         <effect>
+            <MotionBlur radius="63.0" />
+         </effect>
+      </Line>
+      <Text fill="WHITE" layoutX="640.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Computer" wrappingWidth="99.5">
+         <font>
+            <Font name="Georgia" size="21.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnDrawFromDeck" layoutX="247.0" layoutY="356.0" mnemonicParsing="false" onAction="#btnDrawFromDeck_OnClick" prefHeight="35.0" prefWidth="122.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Draw from deck" textAlignment="CENTER">
+         <font>
+            <Font name="Sitka Text" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow height="15.14" radius="6.3375" width="12.21">
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button fx:id="btnQuit" alignment="CENTER" layoutX="11.0" layoutY="6.0" mnemonicParsing="false" onAction="#btnQuit_OnClick" prefHeight="24.0" prefWidth="92.0" style="-fx-background-color: #eb4034; -fx-background-radius: 10;" text="QUIT" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI" size="17.0" />
+         </font>
+         <effect>
+            <InnerShadow radius="8.535" width="15.14" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Group layoutX="178.0" layoutY="-189.0">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="430.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@imgs/uno_card_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="379.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@imgs/uno_card_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="327.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@imgs/uno_card_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="276.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@imgs/uno_card_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="225.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@imgs/uno_card_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="174.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@imgs/uno_card_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="122.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@imgs/uno_card_back.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="522.0" layoutY="273.0" pickOnBounds="true">
+         <image>
+            <Image url="@imgs/card_icons/yellow-7.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="227.0" layoutX="379.0" layoutY="261.0" opacity="0.84" stroke="#afd5fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="2.0" width="279.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Button fx:id="btnPause" alignment="CENTER" layoutX="927.0" layoutY="6.0" mnemonicParsing="false" onAction="#btnPause_OnClick" prefHeight="24.0" prefWidth="92.0" style="-fx-background-radius: 10;" text="PAUSE" textAlignment="CENTER">
+         <font>
+            <Font name="Nirmala UI Bold" size="17.0" />
+         </font>
+         <effect>
+            <InnerShadow radius="8.535" width="15.14" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Rectangle fx:id="card7_holder" arcHeight="38.0" arcWidth="30.0" fill="#0000004a" height="200.0" layoutX="840.5" layoutY="530.5" opacity="0.66" stroke="BLACK" width="122.0">
+         <effect>
+            <InnerShadow height="173.41" radius="70.8175" width="111.86" />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="card6_holder" arcHeight="38.0" arcWidth="30.0" fill="#0000004a" height="200.0" layoutX="713.5" layoutY="530.5" opacity="0.66" stroke="BLACK" width="122.0">
+         <effect>
+            <InnerShadow height="173.41" radius="70.8175" width="111.86" />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="card5_holder" arcHeight="38.0" arcWidth="30.0" fill="#0000004a" height="200.0" layoutX="587.5" layoutY="530.5" opacity="0.66" stroke="BLACK" width="122.0">
+         <effect>
+            <InnerShadow height="173.41" radius="70.8175" width="111.86" />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="card4_holder" arcHeight="38.0" arcWidth="30.0" fill="#0000004a" height="200.0" layoutX="460.5" layoutY="530.5" opacity="0.66" stroke="BLACK" width="122.0">
+         <effect>
+            <InnerShadow height="173.41" radius="70.8175" width="111.86" />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="card3_holder" arcHeight="38.0" arcWidth="30.0" fill="#0000004a" height="200.0" layoutX="333.5" layoutY="530.5" opacity="0.66" stroke="BLACK" width="122.0">
+         <effect>
+            <InnerShadow height="173.41" radius="70.8175" width="111.86" />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="card2_holder" arcHeight="38.0" arcWidth="30.0" fill="#0000004a" height="200.0" layoutX="206.5" layoutY="530.5" opacity="0.66" stroke="BLACK" width="122.0">
+         <effect>
+            <InnerShadow height="173.41" radius="70.8175" width="111.86" />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="card1_holder" arcHeight="38.0" arcWidth="30.0" fill="#0000004a" height="200.0" layoutX="79.5" layoutY="530.5" opacity="0.66" stroke="BLACK" width="122.0">
+         <effect>
+            <InnerShadow height="173.41" radius="70.8175" width="111.86" />
+         </effect>
+      </Rectangle>
+      <Button fx:id="btnViewExtraCards" layoutX="801.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnViewExtraCards_OnClick" prefHeight="35.0" prefWidth="152.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="View extra cards (0)" textAlignment="CENTER">
+         <font>
+            <Font name="Sitka Text" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow height="15.14" radius="6.3375" width="12.21">
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Label fx:id="labelOppCardsCounter" layoutX="71.0" layoutY="103.0" prefHeight="51.0" prefWidth="214.0" text="Opponent's # of Cards Remaining:  7" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Georgia" size="20.0" />
+         </font>
+      </Label>
+      <Group fx:id="groupPauseOverlay" layoutX="3.0" visible="false">
+         <children>
+            <Rectangle fx:id="rectanglePauseOverlay" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">
+               <effect>
+                  <InnerShadow height="227.64" radius="115.88499999999999" width="237.9" />
+               </effect>
+            </Rectangle>
+            <Label fx:id="labelGamePausedMessage" alignment="CENTER" layoutX="260.0" layoutY="292.0" prefHeight="81.0" prefWidth="519.0" text="Game Paused" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="MS Gothic" size="71.0" />
+               </font>
+               <effect>
+                  <DropShadow height="46.65" radius="25.205" spread="0.59" width="56.17" />
+               </effect>
+            </Label>
+            <Button fx:id="btnResume" layoutX="409.0" layoutY="381.0" mnemonicParsing="false" onAction="#btnResume_OnClick" prefHeight="52.0" prefWidth="221.0" style="-fx-background-radius: 20;" text="Resume?" textAlignment="CENTER">
+               <font>
+                  <Font name="MS Gothic" size="34.0" />
+               </font>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow height="38.59" radius="18.0625" width="35.66" />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Group>
    </children>
 </AnchorPane>

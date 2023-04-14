@@ -1,6 +1,6 @@
 package com.example.uno.controllers;
 
-import com.example.uno.Main;
+import com.example.uno.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,7 +15,7 @@ public class RulesController {
     public Button btnReturnToTitle;
 
     public void btnReturnToTitle_OnClick(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("start-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("start-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene);

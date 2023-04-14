@@ -35,16 +35,20 @@
       </Label>
       <Button fx:id="btnReturnToTitle" layoutX="418.0" layoutY="531.0" mnemonicParsing="false" onAction="#btnReturnToTitle_OnClick" prefHeight="36.0" prefWidth="141.0" style="-fx-background-color: white; -fx-background-radius: 100;" text="Return to title">
          <font>
-            <Font name="MS Gothic" size="15.0" />
+            <Font name="Sitka Text" size="15.0" />
          </font>
          <effect>
-            <DropShadow />
+            <DropShadow>
+               <input>
+                  <InnerShadow height="15.14" radius="8.535" />
+               </input>
+            </DropShadow>
          </effect>
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Button>
-      <Label layoutX="4.0" layoutY="97.0" prefHeight="103.0" prefWidth="969.0" text="Objective: The first player to play ALL the cards in their hand before other players wins. " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label layoutX="22.0" layoutY="97.0" prefHeight="103.0" prefWidth="951.0" text="Objective: The first player to play ALL the cards in their hand before other players wins. " textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="MS Gothic" size="22.0" />
          </font>
@@ -52,7 +56,15 @@
             <DropShadow radius="7.800000000000001" width="12.2" />
          </effect>
       </Label>
-      <Label layoutX="2.0" layoutY="163.0" prefHeight="263.0" prefWidth="969.0" text="Setup: Each player will be dealt 7 cards by the automated dealer at the start of the game. Each player will then take turns trying to match one of their cards to the current card face-up on the center deck.Either the color of your card or the number must match in order for the card (or both) to be played.If you do not have a matching card, you must draw one from the deck and the next player takes their turn." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label layoutX="11.0" layoutY="178.0" prefHeight="158.0" prefWidth="962.0" text="Setup: Each player will be automatically dealt 7 cards by the dealer at the start of the game. Each player will then take turns trying to match one of their cards to the current card face-up on the center deck.Either the color of your card or the number must match in order for the card (or both) to be played.If you do not have a matching card, you must draw one from the deck and the next player takes their turn." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="MS Gothic" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow radius="7.800000000000001" width="12.2" />
+         </effect>
+      </Label>
+      <Label layoutX="20.0" layoutY="336.0" prefHeight="132.0" prefWidth="951.0" text="Once either you or the computer you are playing against play all their cards and have 0 remaining cards on hand, the game automatically ends with a winner prompt." textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="MS Gothic" size="22.0" />
          </font>
