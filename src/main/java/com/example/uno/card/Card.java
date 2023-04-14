@@ -2,7 +2,7 @@ package com.example.uno.card;
 
 public abstract class Card {
     protected CardColor color;
-    protected int number;
+    protected int value;
 
     public Card() {
 
@@ -14,15 +14,17 @@ public abstract class Card {
         return color;
     }
 
+    public String getColorName() { return color.toString(); }
+
     public void setColor(CardColor color) {
         this.color = color;
     }
 
-    public int getNumber() {
-        return number;
+    public int getValue() {
+        return value;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setValue(int value) {
+        this.value = value;
     }
 }
