@@ -34,7 +34,7 @@ public class Deck {
         }
     }
 
-    public ArrayList<Card> getDeck() {
+    public ArrayList<Card> getDeckAsList() {
         return centerDeck;
     }
 
