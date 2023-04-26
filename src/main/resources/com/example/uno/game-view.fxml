@@ -43,7 +43,7 @@
             <MotionBlur radius="63.0" />
          </effect>
       </Line>
-      <Text fill="WHITE" layoutX="310.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You" wrappingWidth="49.5">
+      <Text fx:id="labelYou" fill="WHITE" layoutX="310.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You" wrappingWidth="49.5">
          <font>
             <Font name="Georgia" size="21.0" />
          </font>
@@ -53,7 +53,7 @@
             <MotionBlur radius="63.0" />
          </effect>
       </Line>
-      <Text fill="WHITE" layoutX="640.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Computer" wrappingWidth="99.5">
+      <Text fx:id="labelComputer" fill="WHITE" layoutX="640.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Computer" wrappingWidth="99.5">
          <font>
             <Font name="Georgia" size="21.0" />
          </font>
@@ -123,9 +123,9 @@
             </ImageView>
          </children>
       </Group>
-      <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="522.0" layoutY="273.0" pickOnBounds="true">
+      <ImageView fx:id="imgviewCurrentCard" fitHeight="203.0" fitWidth="122.0" layoutX="522.0" layoutY="273.0" pickOnBounds="true">
          <image>
-            <Image url="@imgs/card_icons/yellow-7.png" />
+            <Image url="@imgs/card_icons/red-1.png" />
          </image>
          <effect>
             <DropShadow />
@@ -202,6 +202,66 @@
             <Font name="Georgia" size="20.0" />
          </font>
       </Label>
+      <Group fx:id="groupCurrentDeckImgViews" layoutX="71.0" layoutY="520.0">
+         <children>
+            <ImageView fx:id="imgview_card0" fitHeight="203.0" fitWidth="122.0" layoutX="9.0" layoutY="9.0" onMouseClicked="#imgView0OnMouseClick" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgview_card1" fitHeight="203.0" fitWidth="122.0" layoutX="136.0" layoutY="9.0" onMouseClicked="#imgView1OnMouseClick" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgview_card2" fitHeight="203.0" fitWidth="122.0" layoutX="262.5" layoutY="10.5" onMouseClicked="#imgView2OnMouseClick" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgview_card3" fitHeight="203.0" fitWidth="122.0" layoutX="389.5" layoutY="10.5" onMouseClicked="#imgView3OnMouseClick" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgview_card4" fitHeight="203.0" fitWidth="122.0" layoutX="516.5" layoutY="10.5" onMouseClicked="#imgView4OnMouseClick" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgview_card5" fitHeight="203.0" fitWidth="122.0" layoutX="643.0" layoutY="9.0" onMouseClicked="#imgView5OnMouseClick" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgview_card6" fitHeight="203.0" fitWidth="122.0" layoutX="769.5" layoutY="10.5" onMouseClicked="#imgView6OnMouseClick" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Group>
       <Group fx:id="groupPauseOverlay" layoutX="3.0" visible="false">
          <children>
             <Rectangle fx:id="rectanglePauseOverlay" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">
@@ -234,5 +294,62 @@
             </Button>
          </children>
       </Group>
+      <Group fx:id="groupWinOverlay" layoutX="3.0" visible="false">
+         <children>
+            <Rectangle fx:id="rectanglePauseOverlay1" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">
+               <effect>
+                  <InnerShadow height="227.64" radius="115.88499999999999" width="237.9" />
+               </effect>
+            </Rectangle>
+            <ImageView fitHeight="286.0" fitWidth="357.0" layoutX="234.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/celebration.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="286.0" fitWidth="357.0" layoutX="549.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" rotate="-63.4">
+               <image>
+                  <Image url="@imgs/celebration.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelGamePausedMessage1" alignment="CENTER" layoutX="260.0" layoutY="292.0" prefHeight="81.0" prefWidth="519.0" text="You win!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="MS Gothic" size="71.0" />
+               </font>
+               <effect>
+                  <DropShadow height="46.65" radius="25.205" spread="0.59" width="56.17" />
+               </effect>
+            </Label>
+            <Button fx:id="btnPlayAgain" layoutX="409.0" layoutY="381.0" mnemonicParsing="false" onAction="#btnPlayAgain_OnClick" prefHeight="52.0" prefWidth="221.0" style="-fx-background-radius: 20;" text="Play again" textAlignment="CENTER">
+               <font>
+                  <Font name="MS Gothic" size="34.0" />
+               </font>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow height="38.59" radius="18.0625" width="35.66" />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Group>
+      <Button fx:id="btnViewOriginalCards" layoutX="801.0" layoutY="425.0" mnemonicParsing="false" onAction="#btnViewOriginalCards_OnClick" prefHeight="35.0" prefWidth="152.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="View original cards" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Sitka Text" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow height="15.14" radius="6.3375" width="12.21">
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Button>
    </children>
 </AnchorPane>
