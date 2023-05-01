@@ -21,11 +21,14 @@ public class Deck {
         centerDeck.addAll(cards);
     }
 
-    public Card giveCardFromCenterDeck(Person person) {
-        Card drawnCard = centerDeck.get(random.nextInt(centerDeck.size())); // picks out a randomly chosen card from the center deck
-        person.receiveCardFromDeck(drawnCard); // puts the drawn card into Person object's personal deck
-        centerDeck.remove(drawnCard); // removes this card from the deck so the deck isn't infinite
-        return drawnCard;
+    public void giveCardFromCenterDeck(Person person) {
+        if (this.getDeckAsList().size() >= 1) {
+            Card drawnCard = centerDeck.get(random.nextInt(centerDeck.size())); // picks out a randomly chosen card from the center deck
+            person.receiveCardFromDeck(drawnCard); // puts the drawn card into Person object's personal deck
+            centerDeck.remove(drawnCard); // removes this card from the deck so the deck isn't infinite
+        } else {
+            System.out.println("No more cards to draw from the deck. | DECK SIZE: " + this.getDeckAsList().size());
+        }
     }
 
     public void printDeck() {
