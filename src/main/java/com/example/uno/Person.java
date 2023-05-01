@@ -55,11 +55,9 @@ public class Person {
     }
 
     public void changeTurnTo(Person person) {
-        System.out.println("turn before-change | this.turn = " + this.hasCurrentTurn + " | person turn = " + person.hasCurrentTurn);
         if (this.hasCurrentTurn) {
             person.setHasCurrentTurn(true);
             this.setHasCurrentTurn(false);
-            System.out.println("turn changed | this.turn = " + this.hasCurrentTurn + " | person turn = " + person.hasCurrentTurn);
         }
     }
 
