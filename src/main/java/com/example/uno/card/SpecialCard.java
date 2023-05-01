@@ -1,5 +1,7 @@
 package com.example.uno.card;
 
+import com.example.uno.Deck;
+import com.example.uno.Person;
 import javafx.scene.image.Image;
 
 import java.util.Objects;
@@ -18,11 +20,6 @@ public class SpecialCard extends Card {
         setCardType(SpecialCardType.valueOf(specialCardType));
         setColor(CardColor.valueOf(color));
         setImage(new Image(imagePath + color.toLowerCase() + "-" + specialCardType + ".png"));
-    }
-
-    public SpecialCard(String specialCardType, int number) {
-        setCardType(SpecialCardType.valueOf(specialCardType));
-        setValue(number);
     }
 
     public SpecialCardType getCardType() {
@@ -45,6 +42,40 @@ public class SpecialCard extends Card {
         }
     }
 
+    public void drawTwo(Deck deck, Person person) {
+        if (this.cardType == SpecialCardType.draw_two) {
+            for (int i = 0; i < 2; i++) {
+                deck.giveCardFromCenterDeck(person);
+            }
+        }
+    }
+
+    public void skip(Person person) {
+        if (this.cardType == SpecialCardType.skip) {
+            person.setHasCurrentTurn(false);
+        }
+    }
+
+    public void reverse(Person person) {
+        person.setHasCurrentTurn(true);
+    }
+
+    public void wildDrawFour(Deck deck, Person person) {
+        if (this.cardType == SpecialCardType.wild_draw_four) {
+            for (int i = 0; i < 4; i++) {
+                deck.giveCardFromCenterDeck(person);
+            }
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SpecialCard that = (SpecialCard) o;
+        return color == that.getColor() || cardType == that.getCardType();
+    }
 
     @Override
     public String toString() {
