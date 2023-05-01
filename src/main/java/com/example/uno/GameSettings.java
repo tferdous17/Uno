@@ -43,6 +43,12 @@ public class GameSettings {
         return deck;
     }
 
+    public void refreshDeck(Deck deck) {
+        deck.populateDeck(numberCardStack);
+        deck.populateDeck(specialCardStack);
+        Collections.shuffle(deck.getDeckAsList());
+    }
+
     private void createNumberCards(String piece) {
         if (piece.startsWith("Red")) {
             numberCardStack.add(new NumberCard("Red", Integer.parseInt(piece.substring(4))));
