@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -47,6 +48,9 @@
          <font>
             <Font name="Georgia" size="21.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Text>
       <Line endX="230.0" layoutX="492.0" layoutY="233.0" startX="-185.0" stroke="WHITE" strokeWidth="3.0">
          <effect>
@@ -57,6 +61,9 @@
          <font>
             <Font name="Georgia" size="21.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Text>
       <Button fx:id="btnDrawFromDeck" layoutX="247.0" layoutY="356.0" mnemonicParsing="false" onAction="#btnDrawFromDeck_OnClick" prefHeight="35.0" prefWidth="122.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Draw from deck" textAlignment="CENTER">
          <font>
@@ -84,6 +91,22 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Button>
+      <Label fx:id="labelWildColor" alignment="CENTER" layoutX="71.0" layoutY="499.0" prefHeight="24.0" prefWidth="152.0" text="WILD: " textFill="WHITE" visible="false">
+         <font>
+            <Font name="Georgia" size="17.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label fx:id="labelWildColorComputer" alignment="CENTER" layoutX="253.0" layoutY="235.0" prefHeight="24.0" prefWidth="152.0" text="WILD: " textFill="WHITE" visible="false">
+         <font>
+            <Font name="Georgia" size="17.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
       <Group layoutX="178.0" layoutY="-189.0">
          <children>
             <ImageView fitHeight="203.0" fitWidth="122.0" layoutX="430.0" layoutY="203.0" pickOnBounds="true" rotate="180.0">
@@ -201,6 +224,9 @@
          <font>
             <Font name="Georgia" size="20.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Group fx:id="groupCurrentDeckImgViews" layoutX="71.0" layoutY="520.0">
          <children>
@@ -294,6 +320,113 @@
             </Button>
          </children>
       </Group>
+      <Group fx:id="groupSelectColorOverlay" layoutX="3.0" visible="false">
+         <children>
+            <Rectangle fx:id="rectanglePauseOverlay11" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">
+               <effect>
+                  <InnerShadow height="227.64" radius="115.88499999999999" width="237.9" />
+               </effect>
+            </Rectangle>
+            <Label alignment="CENTER" layoutX="303.0" layoutY="194.0" prefHeight="81.0" prefWidth="446.0" text="Select a color:" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="MS Gothic" size="53.0" />
+               </font>
+               <effect>
+                  <DropShadow height="46.65" radius="25.205" spread="0.59" width="56.17" />
+               </effect>
+            </Label>
+            <Group layoutX="431.0" layoutY="282.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnSelectRed_OnClick" prefHeight="91.0" prefWidth="95.0" style="-fx-background-color: FF5555; -fx-background-radius: 100% 0 0 0;">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="29.63" radius="10.69" width="15.13" />
+                     </effect>
+                  </Button>
+                  <Button layoutX="95.0" mnemonicParsing="false" onAction="#btnSelectBlue_OnClick" prefHeight="91.0" prefWidth="95.0" style="-fx-background-color: #3149f7; -fx-background-radius: 0 100% 0 0;">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="21.78" radius="8.727500000000001" width="15.13" />
+                     </effect>
+                  </Button>
+                  <Button layoutX="95.0" layoutY="91.0" mnemonicParsing="false" onAction="#btnSelectGreen_OnClick" prefHeight="91.0" prefWidth="95.0" style="-fx-background-color: #48b565; -fx-background-radius: 0 0 100% 0;">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="29.47" radius="10.65" width="15.13" />
+                     </effect>
+                  </Button>
+                  <Button layoutY="91.0" mnemonicParsing="false" onAction="#btnSelectYellow_OnClick" prefHeight="91.0" prefWidth="95.0" style="-fx-background-color: FFAA00; -fx-background-radius: 0 0 0 100;">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="27.07" radius="10.05" width="15.13" />
+                     </effect>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow height="18.07" radius="10.7325" spread="0.39" width="26.86">
+                     <color>
+                        <Color opacity="0.8587786555290222" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Group>
+         </children>
+      </Group>
+      <Group fx:id="groupNoMoreCardsOverlay" layoutX="3.0" visible="false">
+         <children>
+            <Rectangle fx:id="rectanglePauseOverlay13" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">
+               <effect>
+                  <InnerShadow height="227.64" radius="115.88499999999999" width="237.9" />
+               </effect>
+            </Rectangle>
+            <Label fx:id="labelGamePausedMessage12" alignment="CENTER" layoutX="278.0" layoutY="165.0" prefHeight="245.0" prefWidth="483.0" text="No more cards to draw!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="MS Gothic" size="71.0" />
+               </font>
+               <effect>
+                  <DropShadow height="46.65" radius="25.205" spread="0.59" width="56.17" />
+               </effect>
+            </Label>
+            <Button layoutX="399.0" layoutY="373.0" mnemonicParsing="false" onAction="#btnPlayAgain_OnClick" prefHeight="52.0" prefWidth="221.0" style="-fx-background-radius: 20;" text="Restart Game" textAlignment="CENTER">
+               <font>
+                  <Font name="MS Gothic" size="29.0" />
+               </font>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow height="38.59" radius="18.0625" width="35.66" />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnResetDrawPile" layoutX="382.0" layoutY="442.0" mnemonicParsing="false" onAction="#btnResetDrawPile_OnClick" prefHeight="52.0" prefWidth="256.0" style="-fx-background-radius: 20;" text="Reset draw pile" textAlignment="CENTER">
+               <font>
+                  <Font name="MS Gothic" size="29.0" />
+               </font>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow height="38.59" radius="18.0625" width="35.66" />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Group>
       <Group fx:id="groupWinOverlay" layoutX="3.0" visible="false">
          <children>
             <Rectangle fx:id="rectanglePauseOverlay1" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">
@@ -305,13 +438,19 @@
                <image>
                   <Image url="@imgs/celebration.png" />
                </image>
+               <effect>
+                  <DropShadow height="43.97" radius="17.2075" spread="0.16" width="26.86" />
+               </effect>
             </ImageView>
-            <ImageView fitHeight="286.0" fitWidth="357.0" layoutX="549.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" rotate="-63.4">
+            <ImageView fitHeight="286.0" fitWidth="357.0" layoutX="520.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imgs/celebration.png" />
+                  <Image url="@imgs/celebration_flipped.png" />
                </image>
+               <effect>
+                  <DropShadow height="43.97" radius="17.2075" spread="0.16" width="26.86" />
+               </effect>
             </ImageView>
-            <Label fx:id="labelGamePausedMessage1" alignment="CENTER" layoutX="260.0" layoutY="292.0" prefHeight="81.0" prefWidth="519.0" text="You win!" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="labelGamePausedMessage1" alignment="CENTER" layoutX="260.0" layoutY="292.0" prefHeight="81.0" prefWidth="519.0" text="You win!" textAlignment="CENTER" textFill="#56f268">
                <font>
                   <Font name="MS Gothic" size="71.0" />
                </font>
@@ -351,5 +490,38 @@
             </InnerShadow>
          </effect>
       </Button>
+      <Button layoutX="91.0" layoutY="296.0" mnemonicParsing="false" onAction="#testButton_OnClick" prefHeight="120.0" prefWidth="100.0" text="TEST BUTTON" />
+      <Group fx:id="groupLoseOverlay" layoutX="3.0" visible="false">
+         <children>
+            <Rectangle fx:id="rectanglePauseOverlay12" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">
+               <effect>
+                  <InnerShadow height="227.64" radius="115.88499999999999" width="237.9" />
+               </effect>
+            </Rectangle>
+            <Label fx:id="labelGamePausedMessage11" alignment="CENTER" layoutX="260.0" layoutY="292.0" prefHeight="81.0" prefWidth="519.0" text="You lost!" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font name="MS Gothic" size="71.0" />
+               </font>
+               <effect>
+                  <DropShadow height="46.65" radius="25.205" spread="0.59" width="56.17" />
+               </effect>
+            </Label>
+            <Button fx:id="btnPlayAgain1" layoutX="409.0" layoutY="381.0" mnemonicParsing="false" onAction="#btnPlayAgain_OnClick" prefHeight="52.0" prefWidth="221.0" style="-fx-background-radius: 20;" text="Play again" textAlignment="CENTER">
+               <font>
+                  <Font name="MS Gothic" size="34.0" />
+               </font>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow height="38.59" radius="18.0625" width="35.66" />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Group>
    </children>
 </AnchorPane>
