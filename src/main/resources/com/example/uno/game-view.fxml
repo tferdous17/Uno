@@ -490,7 +490,6 @@
             </InnerShadow>
          </effect>
       </Button>
-      <Button layoutX="91.0" layoutY="296.0" mnemonicParsing="false" onAction="#testButton_OnClick" prefHeight="120.0" prefWidth="100.0" text="TEST BUTTON" />
       <Group fx:id="groupLoseOverlay" layoutX="3.0" visible="false">
          <children>
             <Rectangle fx:id="rectanglePauseOverlay12" arcHeight="5.0" arcWidth="5.0" blendMode="MULTIPLY" fill="#575757" height="746.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="1022.0">

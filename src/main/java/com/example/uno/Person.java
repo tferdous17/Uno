@@ -10,7 +10,8 @@ public class Person {
     private final int MAX_PLAYER_DECK_SIZE = 14;
     private boolean isWinner = false;
     private boolean hasCurrentTurn = false;
-    private int cardCounter = 0;
+
+    public Person() { } // Default Constructor
 
     public int getMaxPlayerDeckSize() {
         return MAX_PLAYER_DECK_SIZE;
@@ -22,21 +23,6 @@ public class Person {
 
     public boolean doesHaveCurrentTurn() {
         return hasCurrentTurn;
-    }
-
-    // This method is made for the AI/Computer player only
-    public Card playCard(Card currentCardOnDiscardPile) {
-        Card toReturn = null;
-        for (Card c : personalDeck) {
-            if (c.equals(currentCardOnDiscardPile) && cardCounter < 1) {
-                currentCardOnDiscardPile.setCardTo(c);
-                currentCardOnDiscardPile.setImage(c.getImage());
-                this.personalDeck.remove(c);
-                cardCounter++;
-                return c;
-            }
-        }
-        return toReturn;
     }
 
     public boolean hasTakenTurn() {

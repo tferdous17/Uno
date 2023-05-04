@@ -2,6 +2,7 @@ package com.example.uno.controllers;
 
 import com.example.uno.Game;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -14,6 +15,7 @@ public class RulesController {
 
     public Button btnReturnToTitle;
 
+    @FXML
     public void btnReturnToTitle_OnClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("start-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

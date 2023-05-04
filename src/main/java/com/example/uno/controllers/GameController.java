@@ -6,6 +6,7 @@ import com.example.uno.GameSettings;
 import com.example.uno.Person;
 import com.example.uno.card.*;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
@@ -95,6 +96,7 @@ public class GameController implements Initializable {
     }
 
     // Load title screen when quit button is clicked
+    @FXML
     public void btnQuit_OnClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("start-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -104,15 +106,18 @@ public class GameController implements Initializable {
     }
 
     // Sets the "pause overlay" to become visible when this button is clicked, which also makes the game unplayable as intended when paused
+    @FXML
     public void btnPause_OnClick() {
         groupPauseOverlay.setVisible(true);
     }
 
     // Sets the "pause overlay" to turn invisible when this button is clicked, which resumes the game
+    @FXML
     public void btnResume_OnClick() {
         groupPauseOverlay.setVisible(false);
     }
 
+    @FXML
     public void btnViewExtraCards_OnClick(ActionEvent event) {
         if (humanPlayer.getPlayerDeck().size() > 7) {
             btnViewExtraCards.setVisible(false);
@@ -130,6 +135,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void btnViewOriginalCards_OnClick(ActionEvent event) {
         btnViewOriginalCards.setVisible(false);
         btnViewExtraCards.setVisible(true);
@@ -142,6 +148,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void btnDrawFromDeck_OnClick(ActionEvent event) {
         // handle deck if cards run out
         btnDrawFromDeck.setDisable(!humanPlayer.doesHaveCurrentTurn()); // Disabled button if human player (you) does not have the current turn
@@ -169,6 +176,7 @@ public class GameController implements Initializable {
     /*
     Following set of 7 methods handles the mouse click response on each card to check if they match the discard pile or not (and then does further action)
      */
+    @FXML
     public void imgView0OnMouseClick() {
         if (humanPlayer.doesHaveCurrentTurn() && !btnViewOriginalCards.isVisible()) {
             if (humanPlayer.getPlayerDeck().get(0) != null) {
@@ -183,6 +191,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void imgView1OnMouseClick() {
         if (humanPlayer.doesHaveCurrentTurn() && !btnViewOriginalCards.isVisible()) {
             if (humanPlayer.getPlayerDeck().get(1) != null) {
@@ -197,6 +206,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void imgView2OnMouseClick() {
         if (humanPlayer.doesHaveCurrentTurn() && !btnViewOriginalCards.isVisible()) {
             if (humanPlayer.getPlayerDeck().get(2) != null) {
@@ -211,6 +221,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void imgView3OnMouseClick() {
         if (humanPlayer.doesHaveCurrentTurn() && !btnViewOriginalCards.isVisible()) {
             if (humanPlayer.getPlayerDeck().get(3) != null) {
@@ -225,6 +236,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void imgView4OnMouseClick() {
         if (humanPlayer.doesHaveCurrentTurn() && !btnViewOriginalCards.isVisible()) {
             if (humanPlayer.getPlayerDeck().get(4) != null) {
@@ -239,6 +251,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void imgView5OnMouseClick() {
         if (humanPlayer.doesHaveCurrentTurn() && !btnViewOriginalCards.isVisible()) {
             if (humanPlayer.getPlayerDeck().get(5) != null) {
@@ -253,6 +266,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void imgView6OnMouseClick() {
         if (humanPlayer.doesHaveCurrentTurn() && !btnViewOriginalCards.isVisible()) {
             if (humanPlayer.getPlayerDeck().get(6) != null) {
@@ -267,7 +281,6 @@ public class GameController implements Initializable {
         }
     }
 
-    // * fix cards not automatically re-arranging for cards in original deck
     // If player clicks on a matching card to the discard pile, it will switch that card to be the new card on the discard pile and remove it from player's personal deck
     private void playMatchingCard(Card card, int index, ImageView imgviewCard) {
         if (card instanceof NumberCard) {
@@ -474,16 +487,7 @@ public class GameController implements Initializable {
         labelWildColor.setVisible(false);
     }
 
-    public void testButton_OnClick() {
-        System.out.println("-----------------------------------------------");
-        System.out.println("HUMAN DECK:");
-        humanPlayer.printPlayerDeck();
-        System.out.println("-----------------------------------------------");
-        System.out.println("COMPUTER DECK: ");
-        computerPlayer.printPlayerDeck();
-        System.out.println("-----------------------------------------------");
-    }
-
+    @FXML
     public void btnSelectRed_OnClick() {
         currentCardOnDiscardPile.setColor(CardColor.Red);
         currentCardOnDiscardPile.setValue(-1);
@@ -493,6 +497,7 @@ public class GameController implements Initializable {
         labelWildColor.setVisible(true);
     }
 
+    @FXML
     public void btnSelectBlue_OnClick() {
         currentCardOnDiscardPile.setColor(CardColor.Blue);
         currentCardOnDiscardPile.setValue(-1);
@@ -502,6 +507,7 @@ public class GameController implements Initializable {
         labelWildColor.setVisible(true);
     }
 
+    @FXML
     public void btnSelectGreen_OnClick() {
         currentCardOnDiscardPile.setColor(CardColor.Green);
         currentCardOnDiscardPile.setValue(-1);
@@ -511,6 +517,7 @@ public class GameController implements Initializable {
         labelWildColor.setVisible(true);
     }
 
+    @FXML
     public void btnSelectYellow_OnClick() {
         currentCardOnDiscardPile.setColor(CardColor.Yellow);
         currentCardOnDiscardPile.setValue(-1);
@@ -520,6 +527,7 @@ public class GameController implements Initializable {
         labelWildColor.setVisible(true);
     }
 
+    @FXML
     public void btnPlayAgain_OnClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("start-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -528,6 +536,7 @@ public class GameController implements Initializable {
         window.show();
     }
 
+    @FXML
     public void btnResetDrawPile_OnClick() {
         if (centerDeck.getDeckAsList().size() == 0) {
             gameSettings.refreshDeck(centerDeck);

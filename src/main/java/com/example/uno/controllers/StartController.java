@@ -16,8 +16,6 @@ import java.io.IOException;
 public class StartController {
     public Button btnStartGame;
     public Button btnRules;
-    @FXML
-    private Label welcomeText;
 
     @FXML
     public void btnStartGame_OnClick(ActionEvent event) throws IOException {
